@@ -30,7 +30,6 @@ def get_immediate_subdirectories(a_dir):
     return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
 
 
-
 directories = get_immediate_subdirectories(directory_target)
 for dir in directories:
     move(directory_target + os.path.sep + dir)
