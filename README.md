@@ -9,6 +9,8 @@ The RVL-CDIP should be downloaded from the original website - https://www.cs.cmu
 *IMPORTANT* Remember to replace all the paths to your own.
 `python compose.py <main folder>`
 
+This composes the dataset but it has a lot of folders by default. Run step 2 afterwards
+
 2. This dataset contains a lot of subfolders, that's why you need to also run the following command
 `python flatten.py <main folder>`
 
