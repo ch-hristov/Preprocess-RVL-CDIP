@@ -1,12 +1,10 @@
-# preprocess-rvl-cdip
-Preprocess the RVL-CDIP dataset into a grouped by category format
-
+# Preprocess the RVL-CDIP dataset into a grouped by category format
 
 The RVL-CDIP should be downloaded from the original website - https://www.cs.cmu.edu/~aharley/rvl-cdip/
 
 0. Move the downloaded file in a disk space which has 80 gb free space (incl the 37gb download)
 
-0.5. run `tar -xvzf "./rvl-cdip.tar.gz"`
+For Windows: run `tar -xvzf "./rvl-cdip.tar.gz"` 
 
 1. Use the compose.py to build the per category dataset. 
 *IMPORTANT* Remember to replace all the paths to your own.
