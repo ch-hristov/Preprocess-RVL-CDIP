@@ -11,6 +11,6 @@ The RVL-CDIP should be downloaded from the original website - https://www.cs.cmu
 ![How your folder should look like before running this script](snapshot.png)
 
 3. Use the compose.py to build the per category dataset. 
-`python compose.py
+`python compose.py`
 
 4. Done
