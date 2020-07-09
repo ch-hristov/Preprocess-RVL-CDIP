@@ -6,7 +6,6 @@ The RVL-CDIP should be downloaded from the original website - https://www.cs.cmu
 
 For Windows: run `tar -xvzf "./rvl-cdip.tar.gz"` 
 
-
 0.5. The directory should look something like the image, without the dataset folder (that one is created automatically by this script)
 
 1. Use the compose.py to build the per category dataset. 
