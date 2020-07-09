@@ -1,7 +1,7 @@
 # Preprocess the RVL-CDIP dataset into a grouped by category format
 
 The RVL-CDIP should be downloaded from the original website - https://www.cs.cmu.edu/~aharley/rvl-cdip/.
-This repository is particularly useful if you want to train a model on all images without carrying about benchmarks. For example to train a network for later use for transfer learning :).
+This repository is particularly useful if you want to train a model on all images without worrying about benchmarks (it does not keep the original train/test/val split!). For example to train a network for later use for transfer learning :).
 
 0. Move the downloaded file in a folder which has a lot of disk space.
 
