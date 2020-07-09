@@ -1,5 +1,5 @@
 def compose(dataset):
-    with open('C:\\Users\\interdrift\\Desktop\\rvl\\labels\\' +dataset +".txt") as fh:
+    with open('./labels/' +dataset +".txt") as fh:
         sets = (fh.read().split('\n'))
         dt = {}
         for row in sets:
@@ -54,12 +54,16 @@ classes = [
 
 for category in merged:
     # save directory is here
+
     real_cat = classes[int(category)]
-    target = 'D:\\rvl' + '\\' + real_cat + "\\"
+
+    target = './dataset' + '/' + real_cat + "/"
+
     for item in merged[category]:
-        path = 'C:\\Users\\interdrift\\Desktop\\rvl\\RVLCDIP\\' + item
+        path = item
         base_name = os.path.basename(path)
+
         if not os.path.isdir(target):
             os.makedirs(target)
             
-        copyfile(path, target + base_name)
+        copyfile('./images/' + path, target + base_name)
