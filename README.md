@@ -8,8 +8,9 @@ For Windows: run `tar -xvzf "./rvl-cdip.tar.gz"`
 
 0.5. The directory should look something like the image, without the dataset folder (that one is created automatically by this script)
 
+![How your folder should look like before running this script](snapshot.png)
+
 1. Use the compose.py to build the per category dataset. 
 `python compose.py
-
 
 2. Done
