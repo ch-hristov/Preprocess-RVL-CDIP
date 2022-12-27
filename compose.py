@@ -1,5 +1,9 @@
+import os
+from tqdm import tqdm
+from shutil import copyfile
+
 def compose(dataset):
-    with open('./labels/' +dataset +".txt") as fh:
+    with open('./labels/' + dataset + ".txt") as fh:
         sets = (fh.read().split('\n'))
         dt = {}
         for row in sets:
@@ -9,29 +13,23 @@ def compose(dataset):
                 val = kv[1]
                 dt[key] = (val)
             except:
-                print('whoops')
-        print(len(dt))
+                print("Invalid entry : {0}, skipping this row..".format(row))
         return dt
-            
 
-            
 test = compose('test')
 train = compose('train')
 val = compose('val')
+
+# merge everything into a single dictionary
 mg = {**test, **train, **val}
 
 merged = {}
 for item in mg:
     if not mg[item] in merged:
         merged[mg[item]] = []
-        
-    merged[(mg[item])].append(item)
-    
-print(len(merged))
-print(len(merged['0']))
 
-import os
-from shutil import copyfile
+    merged[(mg[item])].append(item)
+
 
 classes = [
     'letter',
@@ -52,18 +50,18 @@ classes = [
     'memo'
 ]
 
-for category in merged:
+for category in tqdm(merged, "Total progress"):
     # save directory is here
 
     real_cat = classes[int(category)]
 
     target = './dataset' + '/' + real_cat + "/"
 
-    for item in merged[category]:
+    for item in tqdm(merged[category], "Building files for next category.."):
         path = item
         base_name = os.path.basename(path)
 
         if not os.path.isdir(target):
             os.makedirs(target)
-            
+
         copyfile('./images/' + path, target + base_name)
